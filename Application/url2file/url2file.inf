@@ -1,0 +1,34 @@
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = url2file
+  FILE_GUID                      = 0d7c1fea-1f5f-49b2-b4e6-6fd1dd776948
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 0.1
+  ENTRY_POINT                    = ShellCEntryLib
+
+#
+#  VALID_ARCHITECTURES           = IA32 X64 IPF
+#
+
+[Sources]
+  url2file.c
+
+[Packages]
+  StdLib/StdLib.dec
+  ShellPkg/ShellPkg.dec
+  UrlNetworkPkg/UrlNetworkPkg.dec
+  MdePkg/MdePkg.dec
+
+[LibraryClasses]
+  LibC
+  LibStdio
+  DevShell
+  CurlLib
+  LibNetUtil
+
+[Guids]
+
+[Protocols]
+
+[BuildOptions]
+  MSFT:*_*_*_CC_FLAGS = /Od /D_UEFI_ /DCURL_STATICLIB

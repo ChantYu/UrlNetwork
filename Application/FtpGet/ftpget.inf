@@ -1,0 +1,34 @@
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = ftpget
+  FILE_GUID                      = 3fed0549-d9df-418d-a3a6-193bd943f7d4
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 0.1
+  ENTRY_POINT                    = ShellCEntryLib
+
+#
+#  VALID_ARCHITECTURES           = IA32 X64 IPF
+#
+
+[Sources]
+  ftpget.c
+
+[Packages]
+  StdLib/StdLib.dec
+  ShellPkg/ShellPkg.dec
+  UrlNetworkPkg/UrlNetworkPkg.dec
+  MdePkg/MdePkg.dec
+
+[LibraryClasses]
+  LibC
+  LibStdio
+  DevShell
+  CurlLib
+  LibNetUtil
+
+[Guids]
+
+[Protocols]
+
+[BuildOptions]
+  MSFT:*_*_*_CC_FLAGS = /Od /D_UEFI_ /DCURL_STATICLIB

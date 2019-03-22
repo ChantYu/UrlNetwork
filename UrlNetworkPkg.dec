@@ -1,0 +1,16 @@
+[Defines]
+  DEC_SPECIFICATION              = 0x00010005
+  PACKAGE_NAME                   = HpNetworkPkg
+  PACKAGE_GUID                   = 758FB62A-D6C8-44a5-B75D-93A2822FE9B5
+  PACKAGE_VERSION                = 0.1
+
+[Includes]
+  Library/CurlLib/include
+  Library/CurlLib/lib
+  ../StdLib/Include
+  ../StdLib/Include/X64
+  ../StdLib/Include/sys
+  Library/CjsonLib/Include
+  
+[Protocols]
+
